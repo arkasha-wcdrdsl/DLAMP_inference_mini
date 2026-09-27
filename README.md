@@ -16,8 +16,6 @@ forecast_current_72h_YYYYMMDDHH_oneway.nc
 forecast_current_72h_YYYYMMDDHH_nudging.nc
 ```
 
-NetCDF 內容沿用 `2022-1hr` current-profile 格式；原始 `upper_*.npy`、`surface_*.npy` 在轉換完成並驗證後移除。
-
 ## NetCDF dimensions
 
 | Dimension | Size | Meaning |
@@ -41,8 +39,8 @@ NetCDF 內容沿用 `2022-1hr` current-profile 格式；原始 `upper_*.npy`、`
 | `lat` | `(y,x)` | float32 | latitude grid |
 | `lon` | `(y,x)` | float32 | longitude grid |
 | `valid` | `(time)` | uint8 | `1` means the forecast sample exists |
-| `source_init_time` | `(time)` | int64 | source RWRF initial time, Unix epoch seconds |
-| `input_valid_time` | `(time)` | int64 | source RWRF input valid time, Unix epoch seconds |
+| `source_init_time` | `(time)` | int64 | source RWRF initial time |
+| `input_valid_time` | `(time)` | int64 | source RWRF input valid time |
 | `source_path` | `(time)` | string | source RWRF NetCDF path |
 
 `upper` 的 variable 順序：
@@ -90,8 +88,6 @@ For example, `20241031 00UTC` uses:
 ```
 
 Boundary exchange remains FCNv2 at DLAMP steps `6,12,18,...,72`.
-
-`source_init_time`, `input_valid_time` and `source_path` are populated for F000, which is the direct RWRF initial field. Steps F001–F072 are autoregressive DLAMP outputs and do not have independent RWRF source files, so their source metadata is empty or `-1`.
 
 ## RAINNC at F000
 
