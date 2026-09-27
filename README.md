@@ -2,14 +2,8 @@
 
 ## Description
 
-本資料夾包含有 `era5_*_IC.npy` 的個案。每個個案各有兩種 DLAMP boundary strategy：
-
-```text
-YYYYMMDD_0000/oneway/
-YYYYMMDD_0000/nudging/
-```
-
-每個 strategy 資料夾包含一個 NetCDF4 檔案：
+本資料夾包含有 `era5_*_IC.npy` 的個案。每個個案各有兩種 DLAMP boundary strategy。
+每個 strategy 包含一個 NetCDF4 檔案，一個日期會有兩個檔案：
 
 ```text
 forecast_current_72h_YYYYMMDDHH_oneway.nc
