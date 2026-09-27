@@ -92,7 +92,7 @@ The direct RWRF initial field has no DLAMP output `RAINNC` value at F000. Theref
 ```python
 from netCDF4 import Dataset
 
-path = "20241031_0000/oneway/forecast_current_72h_2024103100_oneway.nc"
+path = "20241031_0000/forecast_current_72h_2024103100_oneway.nc"
 
 with Dataset(path) as ds:
     times = ds.variables["time"][:]
